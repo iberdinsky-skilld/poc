@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}First Blog Post{% endblock %}
+
+{% block content %}
+<article>
+    <header style="border-bottom: 2px solid #007cba; padding-bottom: 10px; margin-bottom: 20px;">
+        <h1>First Blog Post</h1>
+        <p style="color: #666;">Published: August 2, 2025 | Author: Django Developer</p>
+    </header>
+
+    <div style="line-height: 1.8;">
+        <p>Welcome to our blog! This is the first article demonstrating file-based dynamic routing in Django.</p>
+
+        <h2>What is file-based routing?</h2>
+        <p>File-based routing is an approach where web page URLs are automatically generated based on the file and folder structure in the project. Instead of manually creating URL patterns for each page, the system determines routes automatically by analyzing the file structure.</p>
+
+        <h3>Advantages of this approach:</h3>
+        <ul>
+            <li><strong>Simplicity:</strong> No need to write URL patterns for each page</li>
+            <li><strong>Intuitiveness:</strong> URL structure reflects file structure</li>
+            <li><strong>Scalability:</strong> Easy to add new pages</li>
+            <li><strong>Maintainability:</strong> Simple renaming and moving of pages</li>
+        </ul>
+
+        <h2>How it works in our project?</h2>
+        <p>In our Django project we created a system that:</p>
+        <ol>
+            <li>Scans the <code>templates/pages/</code> folder</li>
+            <li>Automatically creates URL patterns for all found HTML files</li>
+            <li>Supports nested folders for content organization</li>
+            <li>Handles special cases (e.g., index.html as root page)</li>
+        </ol>
+
+        <div style="background: #f8f9fa; border-left: 4px solid #007cba; padding: 15px; margin: 20px 0;">
+            <h4>Structure example:</h4>
+            <pre style="margin: 0; font-family: monospace;">
+templates/pages/
+├── index.html          → /
+├── about.html          → /about/
+├── contact.html        → /contact/
+└── blog/
+    ├── index.html      → /blog/
+    ├── first-post.html → /blog/first-post/
+    └── article.html    → /blog/article/
+            </pre>
+        </div>
+
+        <h2>Conclusion</h2>
+        <p>File-based routing makes web development more convenient and intuitive. This is especially useful for content websites, blogs, and documentation.</p>
+    </div>
+
+    <footer style="border-top: 1px solid #eee; padding-top: 20px; margin-top: 30px;">
+        <p><a href="/blog/">← Back to articles list</a></p>
+    </footer>
+</article>
+{% endblock %}

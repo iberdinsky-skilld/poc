@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Our Services{% endblock %}
+
+{% block content %}
+<h1>Our Services</h1>
+<p>Services page, available at URL: <code>/services/</code></p>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+    <div style="border: 1px solid #ddd; padding: 15px; border-radius: 5px;">
+        <h3>Web Development</h3>
+        <p>Creating modern web applications using Django framework.</p>
+    </div>
+
+    <div style="border: 1px solid #ddd; padding: 15px; border-radius: 5px;">
+        <h3>Automation</h3>
+        <p>Setting up dynamic routing and process automation.</p>
+    </div>
+
+    <div style="border: 1px solid #ddd; padding: 15px; border-radius: 5px;">
+        <h3>Consulting</h3>
+        <p>Help with choosing architecture and technologies for your projects.</p>
+    </div>
+</div>
+{% endblock %}

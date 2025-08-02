@@ -1,0 +1,20 @@
+# Configuration file for Django + Drupal hybrid routing
+# Pages listed here will be handled by Drupal, not Django
+
+drupal_pages:
+  # Example pages that should be served by Drupal
+  - "/about"
+  - "/blog/post-1" 
+  - "/landing/product-x"
+  - "/contact"
+  
+# Configuration options
+settings:
+  # Cache the configuration on startup
+  cache_on_startup: true
+  
+  # Default behavior for unknown paths (django|drupal|404)
+  default_handler: "django"
+  
+  # Enable debug logging for routing decisions
+  debug_routing: true

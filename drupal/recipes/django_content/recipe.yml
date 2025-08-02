@@ -1,0 +1,118 @@
+name: Django Content Creation
+description: Creates initial content matching Django site structure
+type: Content
+
+recipes:
+  - django_structure
+
+actions:
+  - action: content_create
+    entities:
+      - entity_type: node
+        bundle: page
+        values:
+          title: 'Home Page'
+          body:
+            - value: |
+                <h1>Welcome!</h1>
+                <p>This is the home page recreated from Django structure in Drupal.</p>
+                
+                <h2>Available Pages:</h2>
+                <ul>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+                
+                <p>This structure mirrors the original Django file-based routing system!</p>
+              format: full_html
+          status: 1
+          promote: 1
+          path:
+            - alias: '/'
+            
+      - entity_type: node
+        bundle: page
+        values:
+          title: 'About Us'
+          body:
+            - value: |
+                <h1>About Our Company</h1>
+                <p>This is the about page, recreated from the Django template structure.</p>
+                <p>We are a forward-thinking company that bridges Django and Drupal technologies.</p>
+              format: full_html
+          status: 1
+          path:
+            - alias: '/about'
+            
+      - entity_type: node
+        bundle: page
+        values:
+          title: 'Contact Us'
+          body:
+            - value: |
+                <h1>Contact Information</h1>
+                <p>Get in touch with us!</p>
+                <p>This page structure matches the original Django contact template.</p>
+                
+                <h2>Contact Details:</h2>
+                <ul>
+                    <li>Email: contact@example.com</li>
+                    <li>Phone: +1 (555) 123-4567</li>
+                    <li>Address: 123 Tech Street, Digital City</li>
+                </ul>
+              format: full_html
+          status: 1
+          path:
+            - alias: '/contact'
+            
+      - entity_type: node
+        bundle: page
+        values:
+          title: 'Our Services'
+          body:
+            - value: |
+                <h1>Our Services</h1>
+                <p>We offer comprehensive web development solutions.</p>
+                
+                <h2>Service Areas:</h2>
+                <ul>
+                    <li>Django Development</li>
+                    <li>Drupal Development</li>
+                    <li>Hybrid System Integration</li>
+                    <li>Database Design</li>
+                    <li>DevOps and Deployment</li>
+                </ul>
+              format: full_html
+          status: 1
+          path:
+            - alias: '/services'
+            
+      - entity_type: node
+        bundle: blog_post
+        values:
+          title: 'First Blog Post'
+          body:
+            - value: |
+                <h1>Welcome to Our Blog</h1>
+                <p>This is our first blog post, recreating the Django blog structure in Drupal.</p>
+                <p>We'll be sharing insights about web development, Django, Drupal, and hybrid systems.</p>
+              format: full_html
+          status: 1
+          path:
+            - alias: '/blog/first-post'
+            
+      - entity_type: node
+        bundle: blog_post
+        values:
+          title: 'Django to Drupal Migration'
+          body:
+            - value: |
+                <h1>Migrating from Django to Drupal</h1>
+                <p>In this post, we explore the process of migrating content and structure from Django to Drupal.</p>
+                <p>Key considerations include content types, URL structures, and maintaining SEO value.</p>
+              format: full_html
+          status: 1
+          path:
+            - alias: '/blog/django-to-drupal-migration'

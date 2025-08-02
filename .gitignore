@@ -1,0 +1,13 @@
+drupal/vendor/
+drupal/web/core/
+drupal/web/libraries/
+drupal/web/modules/contrib/
+drupal/web/themes/contrib/
+drupal/web/profiles/contrib/
+drupal/web/sites/*/files/
+drupal/web/sites/*/private/
+drupal/web/sites/*/settings.local.php
+drupal/web/sites/*/services.local.yml
+django/venv
+django/__pycache__/
+django/**/*.pyc

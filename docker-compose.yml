@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  # Apache + mod_wsgi for Django
+  apache-django:
+    build:
+      context: ./django
+      dockerfile: ../docker/Dockerfile.django-apache
+    ports:
+      - "8080:80"
+    volumes:
+      - ./django:/var/www/django
+      - ./django/static:/var/www/django/static
+    environment:
+      - DEBUG=True
+      - PYTHONUNBUFFERED=1
+    networks:
+      - app-network
+
+  # Drupal CMS (separate Apache)
+  drupal:
+    image: drupal:11-apache
+    ports:
+      - "8081:80"
+    volumes:
+      - ./drupal/web:/var/www/html
+      - drupal_sites:/var/www/html/sites
+      - drupal_modules:/var/www/html/modules
+      - drupal_profiles:/var/www/html/profiles
+      - drupal_themes:/var/www/html/themes
+    environment:
+      DRUPAL_DB_HOST: drupal_db
+      DRUPAL_DB_USER: drupal
+      DRUPAL_DB_PASSWORD: drupal
+      DRUPAL_DB_NAME: drupal
+    depends_on:
+      - drupal_db
+    networks:
+      - app-network
+
+  # Database for Drupal
+  drupal_db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: drupal
+      MYSQL_PASSWORD: drupal
+    volumes:
+      - drupal_db_data:/var/lib/mysql
+    expose:
+      - "3306"
+    networks:
+      - app-network
+
+volumes:
+  drupal_db_data:
+  drupal_sites:
+  drupal_modules:
+  drupal_profiles:
+  drupal_themes:
+
+networks:
+  app-network:
+    driver: bridge

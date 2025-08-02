@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<h1>Welcome!</h1>
+<p>This is the home page of a Django project with dynamic routing based on file structure.</p>
+
+<h2>How it works?</h2>
+<ul>
+    <li>File <code>templates/pages/index.html</code> → URL: <code>/</code></li>
+    <li>File <code>templates/pages/about.html</code> → URL: <code>/about/</code></li>
+    <li>File <code>templates/pages/contact.html</code> → URL: <code>/contact/</code></li>
+    <li>File <code>templates/pages/blog/index.html</code> → URL: <code>/blog/</code></li>
+    <li>File <code>templates/pages/blog/first-post.html</code> → URL: <code>/blog/first-post/</code></li>
+</ul>
+
+<p>Just create HTML files in the <code>templates/pages/</code> folder and they will automatically become available at corresponding URLs!</p>
+{% endblock %}
