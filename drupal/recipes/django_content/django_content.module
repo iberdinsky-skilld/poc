@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Django Content module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function django_content_install() {
+  \Drupal::messenger()->addMessage(t("Django Content module installed successfully."));
+}

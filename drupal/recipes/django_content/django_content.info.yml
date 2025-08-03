@@ -1,0 +1,19 @@
+name: Django Content
+type: module
+description: Custom module with content from Django pages
+core_version_requirement: ^9 || ^10 || ^11
+package: Custom
+dependencies:
+  - default_content:default_content
+
+default_content:
+  node:
+    - 4d3d0ee2-fbd9-4045-8fef-d438e538751c  # Home page
+    - 043b54d2-b35a-41da-b0ae-f667e8879adf  # About page
+    - b81ec9a9-d179-4405-85ba-e3e7fdaeb95f  # Services page
+    - 61f3a0f8-809f-4c2b-8720-3d4ace1a436a  # Contact page
+  path_alias:
+    - 8c5ffa08-8f05-4cad-b2cf-bc35e954c3a5  # Home alias /
+    - 585445e7-378b-46b5-8a5a-bdeb46c46ef1  # About alias /about
+    - c8bce45d-eac9-47fd-9290-52009ac07e4f  # Services alias /services
+    - 67f9e0d1-0441-487d-ad3f-50e653d7dfbc  # Contact alias /contact

@@ -1,0 +1,40 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 61f3a0f8-809f-4c2b-8720-3d4ace1a436a
+  bundle: page
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 0
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: Contact
+  created:
+    -
+      value: 1754183666
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /contact
+      langcode: en
+  body:
+    -
+      value: '<h1>Contact Us</h1><p>Get in touch with our team for your Django-Drupal hybrid projects.</p><h2>Contact Information</h2><p>Email: info@example.com</p><p>Phone: +1 (555) 123-4567</p><h2>Office Location</h2><p>123 Tech Street<br>Innovation City, IC 12345</p>'
+      format: full_html
+      summary: ''

@@ -33,32 +33,17 @@ services:
       - drupal_themes:/opt/drupal/web/themes
     command: ["bash", "/usr/local/bin/drupal-startup.sh"]
     environment:
-      DRUPAL_DB_HOST: drupal_db
-      DRUPAL_DB_USER: drupal
-      DRUPAL_DB_PASSWORD: drupal
-      DRUPAL_DB_NAME: drupal
-    depends_on:
-      - drupal_db
-    networks:
-      - app-network
-
-  # Database for Drupal
-  drupal_db:
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: drupal
-      MYSQL_USER: drupal
-      MYSQL_PASSWORD: drupal
-    volumes:
-      - drupal_db_data:/var/lib/mysql
-    expose:
-      - "3306"
+      # Drupal database configuration for RDS
+      DRUPAL_DB_HOST: ${RDS_HOST}
+      DRUPAL_DB_USER: ${RDS_USER}
+      DRUPAL_DB_PASSWORD: ${RDS_PASSWORD}
+      DRUPAL_DB_NAME: ${RDS_DATABASE}
+      DRUPAL_DB_PORT: 3306
+      DRUPAL_DB_DRIVER: mysql
     networks:
       - app-network
 
 volumes:
-  drupal_db_data:
   drupal_sites:
   drupal_modules:
   drupal_profiles:

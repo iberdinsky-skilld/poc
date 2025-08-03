@@ -1,0 +1,40 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: b81ec9a9-d179-4405-85ba-e3e7fdaeb95f
+  bundle: page
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 0
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: Services
+  created:
+    -
+      value: 1754183656
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /services
+      langcode: en
+  body:
+    -
+      value: '<h1>Our Services</h1><h2>Web Development</h2><p>Full-stack development using Django and Drupal integration.</p><h2>Content Management</h2><p>Professional content strategy and CMS implementation.</p><h2>System Integration</h2><p>Seamless integration between different platforms and systems.</p>'
+      format: full_html
+      summary: ''

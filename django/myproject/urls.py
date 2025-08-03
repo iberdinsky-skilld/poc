@@ -3,6 +3,8 @@ from django.urls import path, re_path
 from django.conf import settings
 from django.http import Http404
 from pages import views
+from pages.test_views import test_middleware_config
+from pages.test_views import test_middleware_config
 
 def generate_file_based_urls():
     """
@@ -34,6 +36,9 @@ def generate_file_based_urls():
 
 # Main URL patterns
 urlpatterns = [
+    # Test middleware configuration
+    path('test-middleware/', test_middleware_config),
+    
     # Add automatically generated URLs
     *generate_file_based_urls(),
     

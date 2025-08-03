@@ -1,17 +1,23 @@
-name: Django Structure Recreation
-description: Recreates the Django site structure with content types and pages
-type: Site
+name: 'Django Structure Recreation'
+description: 'Recreates the Django site structure with content types and pages'
+type: 'Site'
+
 install:
-  # Core modules needed
   - node
   - field
   - text
   - path
-  - pathauto
   - menu_ui
-  - block
-  - user
-  - field_ui
   - views
   - views_ui
+
+config:
+  import:
+    node: '*'
+    path: '*'
+  actions:
+    system.site:
+      simpleConfigUpdate:
+        name: 'Django-Drupal POC'
+        slogan: 'Hybrid Django-Drupal Architecture'
 

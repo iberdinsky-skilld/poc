@@ -1,0 +1,40 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 043b54d2-b35a-41da-b0ae-f667e8879adf
+  bundle: page
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 0
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: About
+  created:
+    -
+      value: 1754183472
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /about
+      langcode: en
+  body:
+    -
+      value: '<h1>About Our Hybrid System</h1><p>This innovative architecture bridges Django and Drupal to provide the best of both worlds.</p><h2>Key Benefits</h2><ul><li>Django handles complex business logic</li><li>Drupal manages content and editorial workflows</li><li>Seamless integration between systems</li></ul>'
+      format: full_html
+      summary: ''

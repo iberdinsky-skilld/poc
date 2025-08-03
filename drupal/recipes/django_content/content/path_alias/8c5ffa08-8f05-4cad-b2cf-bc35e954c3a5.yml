@@ -1,0 +1,12 @@
+_meta:
+  version: '1.0'
+  entity_type: path_alias
+  uuid: 8c5ffa08-8f05-4cad-b2cf-bc35e954c3a5
+  default_langcode: en
+default:
+  path:
+    -
+      value: /node/1
+  status:
+    -
+      value: true

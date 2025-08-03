@@ -4,9 +4,11 @@
 drupal_pages:
   # Example pages that should be served by Drupal
   - "/about"
+  - "/about/"
   - "/blog/post-1" 
   - "/landing/product-x"
   - "/contact"
+  - "/contact/"
   
 # Configuration options
 settings:

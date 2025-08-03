@@ -1,25 +1,53 @@
 {% extends 'base.html' %}
 
-{% block title %}Our Services{% endblock %}
+{% block title %}Services - Django Page{% endblock %}
 
 {% block content %}
-<h1>Our Services</h1>
-<p>Services page, available at URL: <code>/services/</code></p>
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
-    <div style="border: 1px solid #ddd; padding: 15px; border-radius: 5px;">
-        <h3>Web Development</h3>
-        <p>Creating modern web applications using Django framework.</p>
+<div style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; text-align: center; margin-bottom: 30px;">
+        <h1 style="margin: 0; font-size: 2.5em;">🔧 Services</h1>
+        <p style="margin: 10px 0 0 0; font-size: 1.2em; opacity: 0.9;">This page is handled by Django</p>
     </div>
 
-    <div style="border: 1px solid #ddd; padding: 15px; border-radius: 5px;">
-        <h3>Automation</h3>
-        <p>Setting up dynamic routing and process automation.</p>
+    <div style="background: #f8f9fa; padding: 25px; border-radius: 8px; margin-bottom: 25px;">
+        <h2 style="color: #2c3e50; margin-top: 0;">📋 Available Services</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+            <div style="background: white; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px;">
+                <div style="font-size: 2em; margin-bottom: 10px;">🚀</div>
+                <h3 style="color: #495057; margin: 0 0 10px 0;">API Development</h3>
+                <p style="color: #6c757d; line-height: 1.6; margin: 0;">RESTful APIs, GraphQL endpoints, and microservices architecture</p>
+            </div>
+            <div style="background: white; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px;">
+                <div style="font-size: 2em; margin-bottom: 10px;">🔐</div>
+                <h3 style="color: #495057; margin: 0 0 10px 0;">Authentication</h3>
+                <p style="color: #6c757d; line-height: 1.6; margin: 0;">JWT tokens, OAuth integration, and user management systems</p>
+            </div>
+            <div style="background: white; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px;">
+                <div style="font-size: 2em; margin-bottom: 10px;">📊</div>
+                <h3 style="color: #495057; margin: 0 0 10px 0;">Data Processing</h3>
+                <p style="color: #6c757d; line-height: 1.6; margin: 0;">Analytics, reporting, and real-time data transformation</p>
+            </div>
+            <div style="background: white; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px;">
+                <div style="font-size: 2em; margin-bottom: 10px;">🔧</div>
+                <h3 style="color: #495057; margin: 0 0 10px 0;">Integrations</h3>
+                <p style="color: #6c757d; line-height: 1.6; margin: 0;">Third-party API connections and workflow automation</p>
+            </div>
+        </div>
     </div>
 
-    <div style="border: 1px solid #ddd; padding: 15px; border-radius: 5px;">
-        <h3>Consulting</h3>
-        <p>Help with choosing architecture and technologies for your projects.</p>
+    <div style="background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 8px; padding: 20px; margin-bottom: 25px;">
+        <h3 style="color: #856404; margin-top: 0;">💡 Why Django for Services?</h3>
+        <ul style="color: #856404; line-height: 1.8; margin: 0;">
+            <li><strong>Application Logic:</strong> Complex business rules and data validation</li>
+            <li><strong>Performance:</strong> Optimized database queries and caching</li>
+            <li><strong>Security:</strong> Built-in protection against common vulnerabilities</li>
+            <li><strong>Scalability:</strong> Handles high-traffic applications efficiently</li>
+        </ul>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="/" style="background: #667eea; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; margin-right: 10px;">← Back to Home</a>
+        <a href="/about/" style="background: #17a2b8; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px;">Try Drupal Page →</a>
     </div>
 </div>
 {% endblock %}

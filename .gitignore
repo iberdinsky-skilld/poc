@@ -11,3 +11,6 @@ drupal/web/sites/*/services.local.yml
 django/venv
 django/__pycache__/
 django/**/*.pyc
+
+# Environment variables
+.env

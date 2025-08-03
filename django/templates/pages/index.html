@@ -1,19 +1,115 @@
 {% extends 'base.html' %}
 
-{% block title %}Home Page{% endblock %}
+{% block title %}Django + Drupal Hybrid System{% endblock %}
 
 {% block content %}
-<h1>Welcome!</h1>
-<p>This is the home page of a Django project with dynamic routing based on file structure.</p>
+<div style="max-width: 1200px; margin: 0 auto; padding: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <header style="text-align: center; margin-bottom: 40px;">
+        <h1 style="color: #2c3e50; font-size: 2.5em; margin-bottom: 10px;">🚀 Django + Drupal Hybrid System</h1>
+        <p style="color: #7f8c8d; font-size: 1.2em;">Seamless integration of Django application logic with Drupal CMS capabilities</p>
+    </header>
 
-<h2>How it works?</h2>
-<ul>
-    <li>File <code>templates/pages/index.html</code> → URL: <code>/</code></li>
-    <li>File <code>templates/pages/about.html</code> → URL: <code>/about/</code></li>
-    <li>File <code>templates/pages/contact.html</code> → URL: <code>/contact/</code></li>
-    <li>File <code>templates/pages/blog/index.html</code> → URL: <code>/blog/</code></li>
-    <li>File <code>templates/pages/blog/first-post.html</code> → URL: <code>/blog/first-post/</code></li>
-</ul>
+    <section style="background: #f8f9fa; padding: 30px; border-radius: 10px; margin-bottom: 30px;">
+        <h2 style="color: #34495e; border-bottom: 2px solid #3498db; padding-bottom: 10px;">💡 The Concept</h2>
+        <p style="line-height: 1.6; margin-bottom: 15px;">
+            This system combines the best of both worlds:
+        </p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+            <div style="background: #e3f2fd; padding: 20px; border-radius: 8px;">
+                <h3 style="color: #1976d2; margin-top: 0;">🐍 Django Strengths</h3>
+                <ul style="line-height: 1.8;">
+                    <li>Application logic & business rules</li>
+                    <li>API development & data processing</li>
+                    <li>User authentication & permissions</li>
+                    <li>Custom functionality & integrations</li>
+                </ul>
+            </div>
+            <div style="background: #e8f5e8; padding: 20px; border-radius: 8px;">
+                <h3 style="color: #388e3c; margin-top: 0;">🌐 Drupal Strengths</h3>
+                <ul style="line-height: 1.8;">
+                    <li>Content management & editorial workflow</li>
+                    <li>Rich media handling & SEO</li>
+                    <li>Multilingual support & accessibility</li>
+                    <li>Marketing pages & landing pages</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<p>Just create HTML files in the <code>templates/pages/</code> folder and they will automatically become available at corresponding URLs!</p>
+    <section style="margin-bottom: 30px;">
+        <h2 style="color: #34495e; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">⚙️ How It Works</h2>
+        <div style="background: #fff; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+            <div style="background: #34495e; color: white; padding: 15px; font-weight: bold;">
+                Request Flow Architecture
+            </div>
+            <div style="padding: 20px;">
+                <ol style="line-height: 2; font-size: 1.1em;">
+                    <li><strong>All requests</strong> come to Django (port 8080)</li>
+                    <li><strong>Middleware</strong> checks <code>ready_pages.yml</code> configuration</li>
+                    <li><strong>If page is in Drupal list</strong> → proxies to Drupal (port 8081)</li>
+                    <li><strong>If page is not in list</strong> → processes with Django</li>
+                    <li><strong>Static files</strong> are automatically proxied from Drupal when needed</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 30px;">
+        <h2 style="color: #34495e; border-bottom: 2px solid #9b59b6; padding-bottom: 10px;">🧪 Live Testing</h2>
+        <p style="margin-bottom: 20px;">Test the hybrid routing system by clicking the links below:</p>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div style="background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 8px; padding: 20px;">
+                <h3 style="color: #856404; margin-top: 0;">📱 Django Pages</h3>
+                <p style="color: #856404; margin-bottom: 15px;">Handled by Django application</p>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <a href="/" style="background: #f39c12; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; text-align: center;">🏠 Home (Django)</a>
+                    <a href="/services/" style="background: #f39c12; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; text-align: center;">🔧 Services (Django)</a>
+                    <a href="/test-middleware/" style="background: #f39c12; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; text-align: center;">⚙️ Middleware Test</a>
+                </div>
+            </div>
+
+            <div style="background: #d1ecf1; border: 1px solid #bee5eb; border-radius: 8px; padding: 20px;">
+                <h3 style="color: #0c5460; margin-top: 0;">🌐 Drupal Pages</h3>
+                <p style="color: #0c5460; margin-bottom: 15px;">Proxied to Drupal CMS</p>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <a href="/about/" style="background: #17a2b8; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; text-align: center;">📖 About (Drupal)</a>
+                    <a href="/contact/" style="background: #17a2b8; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; text-align: center;">📞 Contact (Drupal)</a>
+                    <a href="http://localhost:8081" target="_blank" style="background: #6c757d; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; text-align: center;">🔗 Direct Drupal</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
+        <h2 style="color: #34495e; border-bottom: 2px solid #28a745; padding-bottom: 10px;">📊 System Status</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+            <div style="background: #d4edda; border: 1px solid #c3e6cb; padding: 15px; border-radius: 5px; text-align: center;">
+                <div style="font-size: 2em; margin-bottom: 5px;">✅</div>
+                <div style="font-weight: bold; color: #155724;">Django Active</div>
+                <div style="color: #6c757d; font-size: 0.9em;">Port 8080</div>
+            </div>
+            <div style="background: #d4edda; border: 1px solid #c3e6cb; padding: 15px; border-radius: 5px; text-align: center;">
+                <div style="font-size: 2em; margin-bottom: 5px;">✅</div>
+                <div style="font-weight: bold; color: #155724;">Drupal Active</div>
+                <div style="color: #6c757d; font-size: 0.9em;">Port 8081</div>
+            </div>
+            <div style="background: #d4edda; border: 1px solid #c3e6cb; padding: 15px; border-radius: 5px; text-align: center;">
+                <div style="font-size: 2em; margin-bottom: 5px;">⚡</div>
+                <div style="font-weight: bold; color: #155724;">Middleware</div>
+                <div style="color: #6c757d; font-size: 0.9em;">Routing Active</div>
+            </div>
+            <div style="background: #d4edda; border: 1px solid #c3e6cb; padding: 15px; border-radius: 5px; text-align: center;">
+                <div style="font-size: 2em; margin-bottom: 5px;">🐳</div>
+                <div style="font-weight: bold; color: #155724;">Docker</div>
+                <div style="color: #6c757d; font-size: 0.9em;">Containers Up</div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #dee2e6; color: #6c757d;">
+        <p>🔧 Built with Django {{ django_version }}, Drupal 11, Docker & Apache</p>
+        <p style="font-size: 0.9em;">Hybrid architecture for modern web applications</p>
+    </footer>
+</div>
 {% endblock %}
