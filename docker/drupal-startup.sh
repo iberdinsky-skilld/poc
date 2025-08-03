@@ -6,7 +6,7 @@ echo "=== Starting Drupal automatic installation ==="
 
 # Wait for MySQL to be ready
 echo "Waiting for MySQL to be ready..."
-while ! php -r "try { new PDO('mysql:host=drupal_db;dbname=drupal', 'drupal', 'drupal'); echo 'OK'; } catch(Exception \$e) { exit(1); }"; do
+while ! php -r "try { new PDO('mysql:host=${DRUPAL_DB_HOST};dbname=${DRUPAL_DB_NAME}', '${DRUPAL_DB_USER}', '${DRUPAL_DB_PASSWORD}'); echo 'OK'; } catch(Exception \$e) { exit(1); }"; do
     echo "MySQL not ready, waiting 2 seconds..."
     sleep 2
 done
@@ -38,7 +38,7 @@ if [ ! -f "/opt/drupal/web/sites/default/settings.php" ]; then
     # Install Drupal via drush with correct database credentials
     ./vendor/bin/drush site:install standard \
         --root=/opt/drupal/web \
-        --db-url=mysql://drupal:drupal@drupal_db/drupal \
+        --db-url=mysql://${DRUPAL_DB_USER}:${DRUPAL_DB_PASSWORD}@${DRUPAL_DB_HOST}/${DRUPAL_DB_NAME} \
         --site-name="Django-Drupal Hybrid" \
         --account-name=admin \
         --account-pass=admin123 \
