@@ -1,13 +1,13 @@
 version: '3.8'
 
 services:
-  # Apache + mod_wsgi for Django
+  # Apache + mod_wsgi for Django (main site on port 80)
   apache-django:
     build:
       context: ./django
       dockerfile: ../docker/Dockerfile.django-apache
     ports:
-      - "8080:80"
+      - "80:80"
     volumes:
       - ./django:/var/www/django
       - ./django/static:/var/www/django/static
@@ -17,7 +17,7 @@ services:
     networks:
       - app-network
 
-  # Drupal CMS (separate Apache)
+  # Drupal CMS (secondary site on port 8081)
   drupal:
     image: drupal:11-apache
     ports:
