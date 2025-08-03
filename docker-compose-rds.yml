@@ -40,28 +40,10 @@ services:
       DRUPAL_DB_NAME: ${RDS_DATABASE}
       DRUPAL_DB_PORT: 3306
       DRUPAL_DB_DRIVER: mysql
-    depends_on:
-      - drupal_db
-    networks:
-      - app-network
-
-  # Local database for testing (remove for production RDS)
-  drupal_db:
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: drupal
-      MYSQL_USER: drupal
-      MYSQL_PASSWORD: drupal
-    volumes:
-      - drupal_db_data:/var/lib/mysql
-    expose:
-      - "3306"
     networks:
       - app-network
 
 volumes:
-  drupal_db_data:
   drupal_sites:
   drupal_modules:
   drupal_profiles:
